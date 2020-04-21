@@ -31,7 +31,7 @@ router.post('/', verify, async (req,res) => {
     }
  });
 //Retour un Manager
-router.get('/:ManagerId',async (req,res) => {
+router.get('/:ManagerId',verify,async (req,res) => {
     try{
    const manager= await  Manager.findById(req.params.ManagerId);
    res.json(manager);
